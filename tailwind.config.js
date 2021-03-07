@@ -6,6 +6,35 @@ module.exports = {
     fontFamily: {
       sans: ["Quicksand", "sans-serif"],
     },
+    fontSize: {
+      base: "0.875rem", // 14px
+      xl: "1.5rem", // 24px
+      "2xl": "2.25rem", //36px
+    },
+    colors: {
+      transparent: "transparent",
+      black: "#000000",
+      white: "#ffffff",
+      red: {
+        400: "#DD5862", // Dashboard: Users
+        500: "#FF0000", // Dashboard: Notifications
+        600: "#C73B40", // Active Button Colour
+      },
+      blue: {
+        400: "#A7D1E9", // Dashboard: Locations
+        500: "#3693C9", // Dashboard: List of assets
+      },
+      yellow: {
+        DEFAULT: "#FEAE68", // Dashboard: Assigned Asset Card
+      },
+      pink: {
+        DEFAULT: "#FF5896", // Dashboard: Unassigned Asset Card
+      },
+      gray: {
+        400: "#E2E6E9", // Dashboard: Vendors Card
+        500: "#D4DBDF", // Background Colour, Inactive Button and Input field colours
+      },
+    },
   },
   variants: {
     extend: {},
