@@ -2,7 +2,11 @@ module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"], //tree-shake unused styles in production builds
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: theme => ({
+        hasob: "url('/src/assets/hasob-bg.jpeg')",
+      }),
+    },
     fontFamily: {
       sans: ["Quicksand", "sans-serif"],
     },
