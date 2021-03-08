@@ -9,7 +9,7 @@ module.exports = {
     fontSize: {
       base: "0.875rem", // 14px
       xl: "1.5rem", // 24px
-      "2xl": "2.25rem", //36px
+      "2xl": "2.25rem", // 36px
     },
     colors: {
       transparent: "transparent",
