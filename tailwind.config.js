@@ -6,6 +6,9 @@ module.exports = {
       backgroundImage: theme => ({
         hasob: "url('/src/assets/hasob-bg.jpeg')",
       }),
+      borderWidth: {
+        3: "3px",
+      },
     },
     fontFamily: {
       sans: ["Quicksand", "sans-serif"],
@@ -35,13 +38,16 @@ module.exports = {
         DEFAULT: "#FF5896", // Dashboard: Unassigned Asset Card
       },
       gray: {
+        300: "#E8EBED",
         400: "#E2E6E9", // Dashboard: Vendors Card
         500: "#D4DBDF", // Background Colour, Inactive Button and Input field colours
+        600: "#B8BCC2",
+        700: "#6B7280",
       },
     },
   },
   variants: {
-    extend: {},
+    extend: { backgroundColor: ["active"], opacity: ["disabled"], cursor: ["disabled"] },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };

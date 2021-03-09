@@ -1,8 +1,14 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "../test-utils";
 import App from "../App";
 
-test("renders HASOB text", () => {
-  render(<App />);
-  // const text = screen.getByText(/HASOB/i);
-  // expect(text).toBeInTheDocument();
+describe("<App />", () => {
+  it("renders <App /> component correctly", () => {
+    render(<App />);
+  });
+
+  it("redirects to the sign in page", () => {
+    render(<App />);
+    const signInHeading = screen.getByTestId("sign-in");
+    expect(signInHeading).toBeInTheDocument();
+  });
 });
