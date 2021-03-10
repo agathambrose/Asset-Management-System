@@ -3,11 +3,14 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      backgroundImage: theme => ({
+      backgroundImage: (theme) => ({
         hasob: "url('/src/assets/hasob-bg.jpeg')",
       }),
       borderWidth: {
         3: "3px",
+      },
+      height: {
+        90: "90px",
       },
     },
     fontFamily: {
@@ -47,7 +50,11 @@ module.exports = {
     },
   },
   variants: {
-    extend: { backgroundColor: ["active"], opacity: ["disabled"], cursor: ["disabled"] },
+    extend: {
+      backgroundColor: ["active"],
+      opacity: ["disabled"],
+      cursor: ["disabled"],
+    },
   },
   plugins: [require("@tailwindcss/forms")],
 };

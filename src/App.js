@@ -1,5 +1,6 @@
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { SignIn, SignUp } from "./pages";
+import Vendors from "./pages/Vendors";
 import history from "./utils/history";
 
 const App = () => {
@@ -14,6 +15,9 @@ const App = () => {
         </Route>
         <Route path="/sign-up">
           <SignUp />
+        </Route>
+        <Route path="/vendors">
+          <Vendors/>
         </Route>
       </Switch>
     </Router>
