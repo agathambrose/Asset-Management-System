@@ -1,10 +1,13 @@
 import { Router, Route, Switch, Redirect } from "react-router-dom";
-import { SignIn, SignUp } from "./pages";
-import AllAssetsPage from "./pages/AllAssetsPage";
-import AssignedAssetsPage from "./pages/AssignedAssetsPage";
-import LocationPage from "./pages/LocationPage";
-import UnassignedAssetsPage from "./pages/UnassignedAssetsPage";
-import Vendors from "./pages/Vendors";
+import {
+  SignIn,
+  SignUp,
+  AllAssets,
+  AssignedAssets,
+  Location,
+  UnassignedAssets,
+  Vendors,
+} from "./pages";
 import history from "./utils/history";
 
 const App = () => {
@@ -23,10 +26,18 @@ const App = () => {
         <Route path="/vendors">
           <Vendors />
         </Route>
-        <Route path="/allAssets" component={AllAssetsPage} />
-        <Route path="/assignedAssets" component={AssignedAssetsPage} />
-        <Route path="/unassignedAssets" component={UnassignedAssetsPage} />
-        <Route path="/location" component={LocationPage} />
+        <Route path="/all-assets">
+          <AllAssets />
+        </Route>
+        <Route path="/assigned-assets">
+          <AssignedAssets />
+        </Route>
+        <Route path="/unassigned-assets">
+          <UnassignedAssets />
+        </Route>
+        <Route path="/location">
+          <Location />
+        </Route>
       </Switch>
     </Router>
   );

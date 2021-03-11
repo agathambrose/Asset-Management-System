@@ -1,12 +1,11 @@
-import React from 'react'
-import { ReusedContent } from '../components/reusables/ReusedContent'
+import ReusedContent from "../components/ReusedContent";
 
 const Vendors = () => {
-    return (
-      <ReusedContent>
-        <div></div>
-      </ReusedContent>
-    );
-}
+  return (
+    <ReusedContent>
+      <div></div>
+    </ReusedContent>
+  );
+};
 
-export default Vendors
+export default Vendors;

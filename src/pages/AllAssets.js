@@ -1,18 +1,15 @@
-import React from "react";
 import Pagination from "../components/Pagination";
-import { ReusedContent } from "../components/reusables/ReusedContent";
+import ReusedContent from "../components/ReusedContent";
 import AllAssetRow from "../components/Rows/AllAssetRow";
-import {allAssetList} from "../dummyData/Assets";
+import { allAssetList } from "../dummyData/assets";
 
-function AllAssetsPage() {
+const AllAssets = () => {
   return (
     <ReusedContent>
       <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
         {/* TITLE */}
 
-        <h2 className=" text-base md:text-xl font-semibold px-14  border-b-2 mb-2">
-          All Assets
-        </h2>
+        <h2 className=" text-base md:text-xl font-semibold px-14  border-b-2 mb-2">All Assets</h2>
         {/* SEARCH BAR */}
 
         <div className="w-full flex justify-end px-14 ">
@@ -20,9 +17,7 @@ function AllAssetsPage() {
             type="text"
             className="border w-3/5 border-gray-600 rounded-l-lg  px-3 py-1 sm:w-1/3"
           />
-          <button className="bg-red-600 px-3 py-1 rounded-r-lg font-bold">
-            Search
-          </button>
+          <button className="bg-red-600 px-3 py-1 rounded-r-lg font-bold">Search</button>
         </div>
 
         {/* ROWS */}
@@ -38,21 +33,19 @@ function AllAssetsPage() {
               <h4 className=" px-2 w-12">Edit</h4>
             </div>
             {/* Body */}
-            {allAssetList.map(
-              ({ name, category, quantity, location, edit }, index) => (
-                <AllAssetRow
-                  sn={index + 1}
-                  name={name}
-                  category={category}
-                  quantity={quantity}
-                  location={location}
-                  edit={edit}
-                />
-              )
-            )}
+            {allAssetList.map(({ name, category, quantity, location, edit }, index) => (
+              <AllAssetRow
+                sn={index + 1}
+                name={name}
+                category={category}
+                quantity={quantity}
+                location={location}
+                edit={edit}
+              />
+            ))}
           </div>
           <div className="w-full h-auto mt-2 pt-2">
-      <div className="w-11/12 m-auto rounded-lg ">
+            <div className="w-11/12 m-auto rounded-lg ">
               <Pagination />
             </div>
           </div>
@@ -60,6 +53,6 @@ function AllAssetsPage() {
       </div>
     </ReusedContent>
   );
-}
+};
 
-export default AllAssetsPage;
+export default AllAssets;

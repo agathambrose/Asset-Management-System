@@ -1,8 +1,7 @@
-import React from "react";
-import { Header } from "./Header/Header";
+import Header from "./Header";
 import SideNav from "./SideNav/SideNav";
 
-export const ReusedContent = ({ children }) => {
+const ReusedContent = ({ children }) => {
   return (
     <div className=" bg-gray-600 min-h-screen flex flex-col h-auto pt-20">
       <Header />
@@ -15,3 +14,5 @@ export const ReusedContent = ({ children }) => {
     </div>
   );
 };
+
+export default ReusedContent;

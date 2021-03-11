@@ -1,7 +1,6 @@
-import React from "react";
-import userImg from "../../../assets/userImg.png";
+import userImg from "../../assets/userImg.png";
 import { AiFillCamera } from "react-icons/ai";
-import history from "../../../utils/history";
+import history from "../../utils/history";
 
 const SideNav = () => {
   return (

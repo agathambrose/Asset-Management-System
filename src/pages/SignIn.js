@@ -45,9 +45,7 @@ const SignIn = () => {
                 <p className="text-right">Forgot Password?</p>
               </Link>
             </div>
-            <Link to="/vendors">
-              <Button disabled={isSubmitting}>Sign In</Button>
-            </Link>
+            <Button disabled={isSubmitting}>Sign In</Button>
             <p className="text-base self-start mt-4">
               Don't have an account?{" "}
               <Link to="/sign-up" className="text-red-600">
