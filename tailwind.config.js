@@ -35,9 +35,12 @@ module.exports = {
         500: "#D4DBDF", // Background Colour, Inactive Button and Input field colours
       },
     },
+      
   },
   variants: {
     extend: {},
   },
   plugins: [],
 };
+
+
