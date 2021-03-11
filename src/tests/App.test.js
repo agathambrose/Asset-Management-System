@@ -1,42 +1,18 @@
-import {
-  getAllByText,
-  getQueriesForElement,
-  render,
-  screen,
-  getByLabelText,
-} from "@testing-library/react";
+import { render, screen } from "../test-utils";
 import App from "../App";
 import React from "react";
 import ReactDOM from "react-dom";
 
+describe("<App />", () => {
+  it("renders <App /> component correctly", () => {
+    render(<App />);
+  });
 
-
-
-
-
-
-// test("renders App text", () => {
-//   render(<App/>);
-//   //   const text = screen.getByText(/All Assets/a);
-//   const text = screen.getQueriesForElement("h2");
-
-//   expect(text).toBeInTheDocument();
-//   expect(text).toBe("HASOB");
-//   expect(text).toBeTruthy();
-// });
-
-test("should render content", () => {
-  const root = document.createElement("div");
-  ReactDOM.render(<App />, root);
-  const {
-    getByText,
-    findAllByText,
-    getByPlaceholderText,
-  } = getQueriesForElement(root);
-
-  expect(getByText("HASOB")).not.toBeNull();
-
-  // expect(root.querySelector("button").textContent).toBe("Search");
+  it("redirects to the sign in page", () => {
+    render(<App />);
+    const signInHeading = screen.getByTestId("sign-in");
+    expect(signInHeading).toBeInTheDocument();
+  });
 });
 // test("renders HASOB text", () => {
 //   render(<App />);
