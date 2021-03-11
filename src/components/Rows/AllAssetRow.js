@@ -4,15 +4,15 @@ function AllAssetRow({sn,name, category, quantity, location, edit}) {
     return (
       <>
         <div
-          className="bg-white text-base text-center font-semibold md:h-14 mb-1 mx-1 flex items-center justify-center h-16"
+          className="bg-white text-lg text-center font-semibold md:h-16 p-2 mb-1 mx-1 flex items-center justify-center  h-20"
         >
           <h3
-            className=" mr-0.5 px-2 w-4
-           sm:w-12 sm:bg-blue-500  "
+            className="font-black mr-0.5 px-2 w-4
+           sm:w-12  "
           >
             {sn}
           </h3>
-          <h4 className=" mr-0.5 px-2 w-3/6 ">{name}</h4>
+          <h4 className="text-center mr-0.5 px-2 w-3/6 ">{name}</h4>
           <h4 className=" mr-0.5 px-2 w-1/6">{category}</h4>
           <h4 className=" mr-0.5 px-2 w-1/6">{quantity}</h4>
           <h4 className=" mr-0.5 px-2 w-2/6">{location}</h4>
