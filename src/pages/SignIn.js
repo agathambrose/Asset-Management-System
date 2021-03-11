@@ -12,9 +12,7 @@ const SignIn = () => {
 
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email address").required("Required"),
-    password: Yup.string()
-      .min(6, "Must be at least 6 characters")
-      .required("Required"),
+    password: Yup.string().min(6, "Must be at least 6 characters").required("Required"),
   });
 
   return (
@@ -31,12 +29,7 @@ const SignIn = () => {
       >
         {({ isSubmitting }) => (
           <Form className="flex flex-col items-center">
-            <MyInput
-              name="email"
-              type="email"
-              placeholder="Email"
-              leftIcon={PersonIcon}
-            />
+            <MyInput name="email" type="email" placeholder="Email" leftIcon={PersonIcon} />
             <MyInput
               className="mt-8"
               name="password"

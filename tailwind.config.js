@@ -3,7 +3,7 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      backgroundImage: (theme) => ({
+      backgroundImage: theme => ({
         hasob: "url('/src/assets/hasob-bg.jpeg')",
       }),
       borderWidth: {
@@ -48,7 +48,6 @@ module.exports = {
         700: "#6B7280",
       },
     },
-      
   },
   variants: {
     extend: {
@@ -59,5 +58,3 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/forms")],
 };
-
-
