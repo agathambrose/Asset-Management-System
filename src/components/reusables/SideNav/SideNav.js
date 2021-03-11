@@ -5,7 +5,7 @@ import history from "../../../utils/history";
 
 const SideNav = () => {
   return (
-    <div className="p-4 bg-white flex flex-col w-1/6 rounded-md items-center justify-between h-full">
+    <div className="p-4 bg-white flex flex-col w-1/6 rounded-md items-center justify-between">
       <div className="relative mr-auto">
         <img className="rounded-full w-28" src={userImg} alt="images" />
         <div className="bg-red-500 flex justify-center rounded-full p-1 absolute top-20 right-0">

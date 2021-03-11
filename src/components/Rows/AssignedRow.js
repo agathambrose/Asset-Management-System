@@ -2,7 +2,7 @@ import React from 'react'
 
 function AssignedRow({sn, name, category, quantity}) {
     return (
-      <div className="bg-white text-lg text-center font-semibold md:h-16 p-2 mb-1 mx-1 flex items-center justify-center  h-20">
+      <div className="bg-white text-lg text-center font-semibold md:h-14 p-2 mb-0.5 mx-1 flex items-center justify-center  h-16">
         <h3
           className=" font-black mr-0.5 px-2 w-4
            sm:w-12   "
