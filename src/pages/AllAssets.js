@@ -5,10 +5,7 @@ import { allAssetList } from "../dummyData/assets";
 const AllAssets = () => {
   return (
     <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
-      {/* TITLE */}
-
       <h2 className=" text-base md:text-xl font-semibold px-14  border-b-2 mb-2">All Assets</h2>
-      {/* SEARCH BAR */}
 
       <div className="w-full flex justify-end px-14 ">
         <input
@@ -17,8 +14,6 @@ const AllAssets = () => {
         />
         <button className="bg-red-600 px-3 py-1 rounded-r-lg font-bold">Search</button>
       </div>
-
-      {/* ROWS */}
 
       <div className=" w-full h-auto mt-2 pt-2">
         <div className="w-11/12 m-auto rounded-lg border border-gray-700 ">
@@ -30,7 +25,6 @@ const AllAssets = () => {
             <h4 className="mr-0.5 px-2 w-2/6">Location</h4>
             <h4 className=" px-2 w-12">Edit</h4>
           </div>
-          {/* Body */}
           {allAssetList.map(({ name, category, quantity, location, edit }, index) => (
             <AllAssetRow
               key={index}
