@@ -7,6 +7,7 @@ import {
   Location,
   UnassignedAssets,
   Vendors,
+  Profile,
 } from "./pages";
 import history from "./utils/history";
 
@@ -38,6 +39,12 @@ const App = () => {
         <Route path="/location">
           <Location />
         </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+        {/* Remove this comment when Pages are available */}
+        <Route path="/dashboard"></Route>
+        <Route path="/users"></Route>
       </Switch>
     </Router>
   );

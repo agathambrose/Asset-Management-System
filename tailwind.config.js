@@ -47,6 +47,15 @@ module.exports = {
         600: "#B8BCC2",
         700: "#6B7280",
       },
+      linkedin: {
+        DEFAULT: "#2867B2",
+      },
+      twitter: {
+        DEFAULT: "#1DA1F2",
+      },
+      facebook: {
+        DEFAULT: "#4267B2",
+      },
     },
   },
   variants: {

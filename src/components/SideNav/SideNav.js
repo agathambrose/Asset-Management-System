@@ -1,11 +1,10 @@
-import userImg from "../../assets/userImg.png";
+import userImg from "../../assets/user-img.png";
 import { AiFillCamera } from "react-icons/ai";
-import history from "../../utils/history";
-import Button from "./Button";
+import NavButton from "./NavButton";
 
 const SideNav = () => {
   return (
-    <nav className="bg-white flex flex-col w-1/6 items-center justify-between">
+    <nav className="bg-white flex flex-col w-1/6 items-center justify-between pb-2">
       <div className="flex justify-between flex-col items-center">
         <div className="relative mr-auto ml-6 mt-8">
           <img className="rounded-full w-28" src={userImg} alt="images" />
@@ -14,10 +13,10 @@ const SideNav = () => {
           </div>
         </div>
         <div className="ml-6 mt-10">
-          <Button>Profile</Button>
-          <Button>Dashboard</Button>
-          <Button onClick={() => history.push("/all-assets")}>Assets</Button>
-          <Button>Users</Button>
+          <NavButton path="/profile">Profile</NavButton>
+          <NavButton path="/dashboard">Dashboard</NavButton>
+          <NavButton path="/all-assets">Assets</NavButton>
+          <NavButton path="/users">Users</NavButton>
         </div>
       </div>
 

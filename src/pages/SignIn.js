@@ -4,8 +4,8 @@ import { useState } from "react";
 import { BsPersonFill as PersonIcon } from "react-icons/bs";
 import { RiKeyFill as KeyIcon } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { AuthContainer, MyInput } from "../components";
-import { Button, Checkbox } from "../components/Form";
+import { AuthContainer, MyInput, Button } from "../components";
+import { Checkbox } from "../components/AuthForm";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -45,7 +45,9 @@ const SignIn = () => {
                 <p className="text-right">Forgot Password?</p>
               </Link>
             </div>
-            <Button disabled={isSubmitting}>Sign In</Button>
+            <Button disabled={isSubmitting} color="white">
+              Sign In
+            </Button>
             <p className="text-base self-start mt-4">
               Don't have an account?{" "}
               <Link to="/sign-up" className="text-red-600">

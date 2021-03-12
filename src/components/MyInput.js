@@ -1,4 +1,11 @@
-import { EyeButton, FormControl, FormErrorMessage, IconWrapper, Input, InputControl } from "./Form";
+import {
+  EyeButton,
+  FormControl,
+  FormErrorMessage,
+  IconWrapper,
+  Input,
+  InputControl,
+} from "./AuthForm";
 
 const MyInput = props => {
   const {
