@@ -2,6 +2,7 @@
 
 export { default as AllAssets } from "./AllAssets.js";
 export { default as AssignedAssets } from "./AssignedAssets.js";
+export { default as Dashboard } from "./Dashboard.js";
 export { default as Location } from "./Location.js";
 export { default as Profile } from "./Profile.js";
 export { default as SignIn } from "./SignIn.js";

@@ -12,6 +12,12 @@ module.exports = {
       height: {
         90: "90px",
       },
+      width: {
+        "fit-content": "fit-content",
+      },
+      inset: {
+        540: "540px",
+      },
     },
     fontFamily: {
       sans: ["Quicksand", "sans-serif"],

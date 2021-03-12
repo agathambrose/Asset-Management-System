@@ -27,6 +27,9 @@ const Vendors = loadable(() => import("./pages/Vendors"), {
 const Profile = loadable(() => import("./pages/Profile"), {
   fallback: <div>Loading...</div>,
 });
+const Dashboard = loadable(() => import("./pages/Dashboard"), {
+  fallback: <div>Loading...</div>,
+});
 
 const App = () => {
   return (
@@ -64,9 +67,12 @@ const App = () => {
           <Route path="/profile">
             <Profile />
           </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
           {/* Remove this comment when Pages are available */}
-          <Route path="/dashboard"></Route>
           <Route path="/users"></Route>
+          <Route path="/notifications"></Route>
         </MainContainer>
       </Switch>
     </Router>
