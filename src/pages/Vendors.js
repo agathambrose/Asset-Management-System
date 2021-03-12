@@ -1,11 +1,5 @@
-import MainContainer from "../components/MainContainer";
-
 const Vendors = () => {
-  return (
-    <MainContainer>
-      <div></div>
-    </MainContainer>
-  );
+  return <div></div>;
 };
 
 export default Vendors;
