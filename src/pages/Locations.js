@@ -2,10 +2,10 @@ import Pagination from "../components/Pagination";
 import LocationRow from "../components/Rows/LocationRow";
 import { locationList } from "../dummyData/assets";
 
-const Location = () => {
+const Locations = () => {
   return (
     <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
-      <h2 className=" text-base md:text-xl font-semibold px-14  border-b-2 mb-2">Location</h2>
+      <h2 className=" text-base md:text-xl font-semibold px-14  border-b-2 mb-2">Locations</h2>
       <div className="w-full flex justify-end md:pr-14 pr-10">
         <input
           type="text"
@@ -37,4 +37,4 @@ const Location = () => {
   );
 };
 
-export default Location;
+export default Locations;
