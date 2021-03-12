@@ -1,10 +1,14 @@
 import { Router, Route, Switch, Redirect } from "react-router-dom";
-import { SignIn, SignUp } from "./pages";
-import AllAssetsPage from "./pages/AllAssetsPage";
-import AssignedAssetsPage from "./pages/AssignedAssetsPage";
-import LocationPage from "./pages/LocationPage";
-import UnassignedAssetsPage from "./pages/UnassignedAssetsPage";
-import Vendors from "./pages/Vendors";
+import {
+  SignIn,
+  SignUp,
+  AllAssets,
+  AssignedAssets,
+  Location,
+  UnassignedAssets,
+  Vendors,
+  Profile,
+} from "./pages";
 import history from "./utils/history";
 
 const App = () => {
@@ -23,10 +27,24 @@ const App = () => {
         <Route path="/vendors">
           <Vendors />
         </Route>
-        <Route path="/allAssets" component={AllAssetsPage} />
-        <Route path="/assignedAssets" component={AssignedAssetsPage} />
-        <Route path="/unassignedAssets" component={UnassignedAssetsPage} />
-        <Route path="/location" component={LocationPage} />
+        <Route path="/all-assets">
+          <AllAssets />
+        </Route>
+        <Route path="/assigned-assets">
+          <AssignedAssets />
+        </Route>
+        <Route path="/unassigned-assets">
+          <UnassignedAssets />
+        </Route>
+        <Route path="/location">
+          <Location />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+        {/* Remove this comment when Pages are available */}
+        <Route path="/dashboard"></Route>
+        <Route path="/users"></Route>
       </Switch>
     </Router>
   );

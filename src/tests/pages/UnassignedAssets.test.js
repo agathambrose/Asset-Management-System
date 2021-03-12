@@ -1,16 +1,11 @@
-import {
-  getAllByText,
-  getQueriesForElement,
-  render,
-  screen,
-} from "@testing-library/react";
-import App from "../App";
-import React from "react";
+import { getAllByText, getQueriesForElement, render, screen } from "@testing-library/react";
+import App from "../../App";
+
 import ReactDOM from "react-dom";
-import UnassignedAssetsPage from "../pages/UnassignedAssetsPage";
+import UnassignedAssets from "../../pages/UnassignedAssets";
 
 // test("renders Unassigned Assets text", () => {
-//   render(<UnassignedAssetsPage />);
+//   render(<UnassignedAssets />);
 //   //   const text = screen.getByText(/All Assets/a);
 //   const text = screen.getQueriesForElement("h2");
 //   expect(text).toBeInTheDocument();
@@ -20,12 +15,8 @@ import UnassignedAssetsPage from "../pages/UnassignedAssetsPage";
 
 test("should render content", () => {
   const root = document.createElement("div");
-  ReactDOM.render(<UnassignedAssetsPage />, root);
-  const {
-    getByText,
-    findAllByText,
-    getByPlaceholderText,
-  } = getQueriesForElement(root);
+  ReactDOM.render(<UnassignedAssets />, root);
+  const { getByText, findAllByText, getByPlaceholderText } = getQueriesForElement(root);
 
   expect(getByText("Unassigned Assets")).not.toBeNull();
 

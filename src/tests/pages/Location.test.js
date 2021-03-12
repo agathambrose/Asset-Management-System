@@ -1,16 +1,11 @@
-import {
-  getAllByText,
-  getQueriesForElement,
-  render,
-  screen,
-} from "@testing-library/react";
-import App from "../App";
-import React from "react";
+import { getAllByText, getQueriesForElement, render, screen } from "@testing-library/react";
+import App from "../../App";
+
 import ReactDOM from "react-dom";
-import LocationPage from "../pages/LocationPage";
+import Location from "../../pages/Location";
 
 // test("renders Location text", () => {
-//   render(<LocationPage />);
+//   render(<Location />);
 //   //   const text = screen.getByText(/All Assets/a);
 //     const text = screen.getQueriesForElement("h2");
 //   expect(text).toBeInTheDocument();
@@ -20,12 +15,8 @@ import LocationPage from "../pages/LocationPage";
 
 test("should render content", () => {
   const root = document.createElement("div");
-  ReactDOM.render(<LocationPage />, root);
-  const {
-    getByText,
-    findAllByText,
-    getByPlaceholderText,
-  } = getQueriesForElement(root);
+  ReactDOM.render(<Location />, root);
+  const { getByText, findAllByText, getByPlaceholderText } = getQueriesForElement(root);
 
   expect(getByText("Location")).not.toBeNull();
 

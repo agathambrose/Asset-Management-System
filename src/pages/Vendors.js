@@ -1,12 +1,13 @@
+
 import React from 'react'
-import { ReusedContent } from '../components/reusables/ReusedContent'
+import MainContainer from '../components/MainContainer'
 import Pagination from "../components/Pagination";
 import {VendorsRow} from "../components/Rows/VendorsRow";
 import { vendorsList } from "../dummyData/Vendors";
 
 const Vendors = () => {
     return (
-      <ReusedContent>
+      <MainContainer>
         <div className="bg-white w-full h-full m-auto">
           {/* TITLE */}
 
@@ -59,8 +60,9 @@ const Vendors = () => {
             </div>
           </div>
         </div>
-      </ReusedContent>
+      </MainContainer>
     );
 }
 
-export default Vendors
+
+export default Vendors;

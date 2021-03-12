@@ -1,6 +1,4 @@
-import React from "react";
-
-function Pagination() {
+const Pagination = () => {
   return (
     <div className="flex justify-between items-center font-semibold text-lg">
       <div className="">
@@ -13,6 +11,6 @@ function Pagination() {
       </div>
     </div>
   );
-}
+};
 
 export default Pagination;

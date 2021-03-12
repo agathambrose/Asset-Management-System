@@ -4,8 +4,8 @@ import { useState } from "react";
 import { BsPhone as PhoneIcon } from "react-icons/bs";
 import { RiKeyFill as KeyIcon } from "react-icons/ri";
 import { HiMail as MailIcon } from "react-icons/hi";
-import { AuthContainer, MyInput } from "../components";
-import { Button, Checkbox, FormErrorMessage } from "../components/Form";
+import { AuthContainer, MyInput, Button } from "../components";
+import { Checkbox, FormErrorMessage } from "../components/AuthForm";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -98,7 +98,9 @@ const SignUp = () => {
               <Checkbox>Tick box to proceed.</Checkbox>
               <FormErrorMessage name="checkbox" />
             </div>
-            <Button disabled={isSubmitting}>Sign Up</Button>
+            <Button disabled={isSubmitting} color="white">
+              Sign Up
+            </Button>
           </Form>
         )}
       </Formik>

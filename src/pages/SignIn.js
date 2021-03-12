@@ -4,17 +4,15 @@ import { useState } from "react";
 import { BsPersonFill as PersonIcon } from "react-icons/bs";
 import { RiKeyFill as KeyIcon } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { AuthContainer, MyInput } from "../components";
-import { Button, Checkbox } from "../components/Form";
+import { AuthContainer, MyInput, Button } from "../components";
+import { Checkbox } from "../components/AuthForm";
 
 const SignIn = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const validationSchema = Yup.object({
     email: Yup.string().email("Invalid email address").required("Required"),
-    password: Yup.string()
-      .min(6, "Must be at least 6 characters")
-      .required("Required"),
+    password: Yup.string().min(6, "Must be at least 6 characters").required("Required"),
   });
 
   return (
@@ -31,12 +29,7 @@ const SignIn = () => {
       >
         {({ isSubmitting }) => (
           <Form className="flex flex-col items-center">
-            <MyInput
-              name="email"
-              type="email"
-              placeholder="Email"
-              leftIcon={PersonIcon}
-            />
+            <MyInput name="email" type="email" placeholder="Email" leftIcon={PersonIcon} />
             <MyInput
               className="mt-8"
               name="password"
@@ -52,9 +45,9 @@ const SignIn = () => {
                 <p className="text-right">Forgot Password?</p>
               </Link>
             </div>
-            <Link to="/vendors">
-              <Button disabled={isSubmitting}>Sign In</Button>
-            </Link>
+            <Button disabled={isSubmitting} color="white">
+              Sign In
+            </Button>
             <p className="text-base self-start mt-4">
               Don't have an account?{" "}
               <Link to="/sign-up" className="text-red-600">

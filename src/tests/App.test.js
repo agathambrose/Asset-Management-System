@@ -1,7 +1,5 @@
 import { render, screen } from "../test-utils";
 import App from "../App";
-import React from "react";
-import ReactDOM from "react-dom";
 
 describe("<App />", () => {
   it("renders <App /> component correctly", () => {
@@ -40,7 +38,7 @@ describe("<App />", () => {
 //   expect(getByPlaceholderText("input here")).toBeTruthy();
 //   expect(getByText("Span here")).toBeTruthy();
 
-  // expect(root.querySelector("h2").textContent).toBe("from zero to hero");
+// expect(root.querySelector("h2").textContent).toBe("from zero to hero");
 
-  // expect(root.querySelector("button").textContent).toBe("Click me");
+// expect(root.querySelector("button").textContent).toBe("Click me");
 // });
