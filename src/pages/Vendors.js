@@ -1,10 +1,10 @@
-import ReusedContent from "../components/ReusedContent";
+import MainContainer from "../components/MainContainer";
 
 const Vendors = () => {
   return (
-    <ReusedContent>
+    <MainContainer>
       <div></div>
-    </ReusedContent>
+    </MainContainer>
   );
 };
 

@@ -1,11 +1,11 @@
 import Pagination from "../components/Pagination";
-import ReusedContent from "../components/ReusedContent";
+import MainContainer from "../components/MainContainer";
 import AssignedRow from "../components/Rows/AssignedRow";
 import { allAssignedAssets } from "../dummyData/assets";
 
 const AssignedAssets = () => {
   return (
-    <ReusedContent>
+    <MainContainer>
       <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
         {/* TITLE */}
 
@@ -41,7 +41,7 @@ const AssignedAssets = () => {
           </div>
         </div>
       </div>
-    </ReusedContent>
+    </MainContainer>
   );
 };
 

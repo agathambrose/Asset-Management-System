@@ -4,18 +4,18 @@ import userImg from "../assets/userImg.png";
 
 const Header = () => {
   return (
-    <header className="flex justify-between p-3 bg-white fixed left-0 top-0 w-full z-10 h-90 border-b-2 border-gray-700">
+    <header className="flex justify-between p-3 bg-white fixed left-0 top-0 w-full z-10 h-90 border-b-3 border-gray-600">
       <div>
-        <img src={logo} alt="images" />
-        <img className="ml-14 -mt-2" src={assetmanagerlogo} alt="images" />
+        <img src={logo} alt="Logo" />
+        <img className="ml-14 -mt-2" src={assetmanagerlogo} alt="Office Asset Manager" />
       </div>
 
       <div className="flex">
-        <img className="rounded-full" src={userImg} alt="images" />
+        <img className="rounded-full" src={userImg} alt="User" />
 
-        <div className="mt-2">
-          <h3 className="font-bold">Chukwuma Albert Obiazor</h3>
-          <p className="font-bold">Snr. Software Developer</p>
+        <div className="mt-2 font-bold">
+          <h3>Chukwuma Albert Obiazor</h3>
+          <p>Snr. Software Developer</p>
         </div>
       </div>
     </header>

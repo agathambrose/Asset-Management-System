@@ -1,11 +1,11 @@
 import Pagination from "../components/Pagination";
-import ReusedContent from "../components/ReusedContent";
+import MainContainer from "../components/MainContainer";
 import LocationRow from "../components/Rows/LocationRow";
 import { locationList } from "../dummyData/assets";
 
 const Location = () => {
   return (
-    <ReusedContent>
+    <MainContainer>
       <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
         {/* TITLE */}
 
@@ -29,7 +29,7 @@ const Location = () => {
             </div>
 
             {locationList.map(({ office, edit, remove }, index) => (
-              <LocationRow sn={index + 1} office={office} edit={edit} remove={remove} />
+              <LocationRow key={index} sn={index + 1} office={office} edit={edit} remove={remove} />
             ))}
           </div>
           <div className="w-full h-auto mt-2 pt-2">
@@ -39,7 +39,7 @@ const Location = () => {
           </div>
         </div>
       </div>
-    </ReusedContent>
+    </MainContainer>
   );
 };
 

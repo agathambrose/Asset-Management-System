@@ -1,11 +1,11 @@
 import Pagination from "../components/Pagination";
-import ReusedContent from "../components/ReusedContent";
+import MainContainer from "../components/MainContainer";
 import UnassignedRow from "../components/Rows/UnassignedRow";
 import { allUnassignedAssets } from "../dummyData/assets";
 
 const UnassignedAssets = () => {
   return (
-    <ReusedContent>
+    <MainContainer>
       <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
         {/* TITLE */}
         <h2 className=" text-base md:text-xl font-semibold px-14  border-b-2 mb-2">
@@ -48,7 +48,7 @@ const UnassignedAssets = () => {
           </div>
         </div>
       </div>
-    </ReusedContent>
+    </MainContainer>
   );
 };
 

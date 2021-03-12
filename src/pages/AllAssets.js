@@ -1,11 +1,11 @@
 import Pagination from "../components/Pagination";
-import ReusedContent from "../components/ReusedContent";
+import MainContainer from "../components/MainContainer";
 import AllAssetRow from "../components/Rows/AllAssetRow";
 import { allAssetList } from "../dummyData/assets";
 
 const AllAssets = () => {
   return (
-    <ReusedContent>
+    <MainContainer>
       <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
         {/* TITLE */}
 
@@ -35,6 +35,7 @@ const AllAssets = () => {
             {/* Body */}
             {allAssetList.map(({ name, category, quantity, location, edit }, index) => (
               <AllAssetRow
+                key={index}
                 sn={index + 1}
                 name={name}
                 category={category}
@@ -51,7 +52,7 @@ const AllAssets = () => {
           </div>
         </div>
       </div>
-    </ReusedContent>
+    </MainContainer>
   );
 };
 
