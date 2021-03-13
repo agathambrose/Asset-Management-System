@@ -1,4 +1,4 @@
-import Pagination from "../components/Pagination";
+import AssetPagination from "../components/Pagination/AssetPagination";
 import LocationRow from "../components/Rows/LocationRow";
 import { locationList } from "../dummyData/assets";
 
@@ -32,7 +32,7 @@ const Location = () => {
         </div>
         <div className="w-full h-auto mt-2 pt-2">
           <div className="w-11/12 m-auto rounded-lg ">
-            <Pagination />
+            <AssetPagination />
           </div>
         </div>
       </div>

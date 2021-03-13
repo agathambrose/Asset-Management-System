@@ -1,4 +1,4 @@
-import Pagination from "../components/Pagination";
+import AssetPagination from "../components/Pagination/AssetPagination";
 import AllAssetRow from "../components/Rows/AllAssetRow";
 import { allAssetList } from "../dummyData/assets";
 
@@ -45,7 +45,7 @@ const AllAssets = () => {
         </div>
         <div className="w-full h-auto mt-2 pt-2">
           <div className="w-11/12 m-auto rounded-lg ">
-            <Pagination />
+            <AssetPagination />
           </div>
         </div>
       </div>

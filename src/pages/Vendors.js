@@ -1,5 +1,5 @@
 import React from "react";
-import Pagination from "../components/Pagination";
+import VendorsPagination from "../components/Pagination/VendorsPagination";
 import { VendorsRow } from "../components/Rows/VendorsRow";
 import { vendorsList } from "../dummyData/Vendors";
 
@@ -43,7 +43,7 @@ const Vendors = () => {
 
         <div className="w-full h-auto my-5 pt-2">
           <div className="w-11/12 m-auto rounded-lg ">
-            <Pagination />
+            <VendorsPagination />
           </div>
         </div>
       </div>
