@@ -15,7 +15,7 @@ const AllAssets = loadable(() => import("./pages/AllAssets"), {
 const AssignedAssets = loadable(() => import("./pages/AssignedAssets"), {
   fallback: <div>Loading...</div>,
 });
-const Location = loadable(() => import("./pages/Location"), {
+const Locations = loadable(() => import("./pages/Locations"), {
   fallback: <div>Loading...</div>,
 });
 const UnassignedAssets = loadable(() => import("./pages/UnassignedAssets"), {
@@ -25,6 +25,9 @@ const Vendors = loadable(() => import("./pages/Vendors"), {
   fallback: <div>Loading...</div>,
 });
 const Profile = loadable(() => import("./pages/Profile"), {
+  fallback: <div>Loading...</div>,
+});
+const Dashboard = loadable(() => import("./pages/Dashboard"), {
   fallback: <div>Loading...</div>,
 });
 
@@ -58,15 +61,18 @@ const App = () => {
           <Route path="/unassigned-assets">
             <UnassignedAssets />
           </Route>
-          <Route path="/location">
-            <Location />
+          <Route path="/locations">
+            <Locations />
           </Route>
           <Route path="/profile">
             <Profile />
           </Route>
+          <Route path="/dashboard">
+            <Dashboard />
+          </Route>
           {/* Remove this comment when Pages are available */}
-          <Route path="/dashboard"></Route>
           <Route path="/users"></Route>
+          <Route path="/notifications"></Route>
         </MainContainer>
       </Switch>
     </Router>

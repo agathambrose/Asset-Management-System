@@ -2,13 +2,10 @@ import AssetPagination from "../components/Pagination/AssetPagination";
 import LocationRow from "../components/Rows/LocationRow";
 import { locationList } from "../dummyData/assets";
 
-const Location = () => {
+const Locations = () => {
   return (
     <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
-      {/* TITLE */}
-
-      <h2 className=" text-base md:text-xl font-semibold px-14  border-b-2 mb-2">Location</h2>
-      {/* SEARCH BAR */}
+      <h2 className=" text-base md:text-xl font-semibold px-14  border-b-2 mb-2">Locations</h2>
       <div className="w-full flex justify-end md:pr-14 pr-10">
         <input
           type="text"
@@ -16,7 +13,6 @@ const Location = () => {
         />
         <button className="bg-red-600 px-3 py-1 rounded-r-lg font-bold">Search</button>
       </div>
-      {/* ROWS */}
       <div className=" w-full h-auto mt-2 pt-2">
         <div className="w-11/12 m-auto rounded-lg border border-gray-700 ">
           <div className="bg-gray-600 rounded-t text-lg text-center font-black h-14 mb-1 p-2  flex items-center justify-center">
@@ -30,6 +26,7 @@ const Location = () => {
             <LocationRow key={index} sn={index + 1} office={office} edit={edit} remove={remove} />
           ))}
         </div>
+
         <div className="w-full h-auto mt-2 pt-2">
           <div className="w-11/12 m-auto rounded-lg ">
             <AssetPagination />
@@ -40,4 +37,4 @@ const Location = () => {
   );
 };
 
-export default Location;
+export default Locations;
