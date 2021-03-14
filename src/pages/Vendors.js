@@ -1,7 +1,6 @@
-import React from "react";
 import VendorsPagination from "../components/Pagination/VendorsPagination";
 import { VendorsRow } from "../components/Rows/VendorsRow";
-import { vendorsList } from "../dummyData/Vendors";
+import { vendorsList } from "../dummyData/vendors";
 
 const Vendors = () => {
   return (

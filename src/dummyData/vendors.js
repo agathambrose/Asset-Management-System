@@ -1,4 +1,4 @@
-import {ImCancelCircle} from 'react-icons/im'
+import { ImCancelCircle } from "react-icons/im";
 
 export const vendorsList = [
   {
@@ -45,4 +45,3 @@ export const vendorsList = [
     remove: <ImCancelCircle />,
   },
 ];
-
