@@ -47,6 +47,7 @@ module.exports = {
         DEFAULT: "#FF5896", // Dashboard: Unassigned Asset Card
       },
       gray: {
+        200: "#858585",
         300: "#E8EBED",
         400: "#E2E6E9", // Dashboard: Vendors Card
         500: "#D4DBDF", // Background Colour, Inactive Button and Input field colours
