@@ -23,7 +23,7 @@ const AllUsers = () => {
         <Search />
 
         <div className="mx-auto my-4 h-full w-11/12">
-          <div className="w-full bg-white shadow rounded-lg">
+          <div className="w-full bg-white shadow rounded-lg overflow-auto">
             <table>
               <thead className="bg-gray-500">
                 <tr className="font-light text-left px-2 py-4 rounded-lg">
@@ -64,7 +64,6 @@ const AllUsers = () => {
             </table>
           </div>
         </div>
-
         <EditUsers modalRef={modalRef} />
 
         <div className="w-full h-auto my-5 pt-2">

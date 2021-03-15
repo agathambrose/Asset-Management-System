@@ -2,8 +2,6 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import history from "./utils/history";
 import loadable from "@loadable/component";
 import { AuthContainer, MainContainer } from "./components";
-import Notifications from "./pages/Notifications";
-import ViewAssets from "./components/ViewAssets";
 
 const SignIn = loadable(() => import("./pages/SignIn"), {
   fallback: <div>Loading...</div>,
@@ -33,6 +31,12 @@ const Dashboard = loadable(() => import("./pages/Dashboard"), {
   fallback: <div>Loading...</div>,
 });
 const AllUsers = loadable(() => import("./pages/AllUsers"), {
+  fallback: <div>Loading...</div>,
+});
+const Notifications = loadable(() => import("./pages/Notifications"), {
+  fallback: <div>Loading...</div>,
+});
+const ViewAssets = loadable(() => import("./pages/ViewAssets"), {
   fallback: <div>Loading...</div>,
 });
 

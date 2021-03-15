@@ -7,17 +7,17 @@ const EditUsers = ({ modalRef }) => {
     <>
       <div
         ref={modalRef}
-        className="h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 hidden"
+        className="h-screen w-full fixed left-0 top-0 flex justify-center items-center bg-black bg-opacity-50 overflow-hidden"
         onClick={e => {
           if (e.target !== e.currentTarget) return;
           modal.classList.add("hidden");
         }}
       >
         <form className="bg-white flex flex-col rounded-md shadow-lg w-1/3 p-8 pb-4 space-y-5">
-          <h2 className="text-base text-xl text-center md:text-2xl font-semibold px-11 pt-3 border-b-2 border-gray-600 mb-2">
+          <h2 className="text-xl text-center md:text-2xl font-semibold px-11 pt-3 border-b-2 border-gray-600 mb-2">
             Edit User
           </h2>
-          <div className="flex justify-between">
+          <div className="flex justify-between mb-5">
             <EditInput type="text" placeholder="First Name" className="w-1/2 mr-2" />
             <EditInput type="text" placeholder="Middle Name" className="w-1/2 mr-2" />
           </div>
@@ -31,11 +31,10 @@ const EditUsers = ({ modalRef }) => {
           </div>
 
           <textarea
-            name="comment"
+            id="comment"
             className="form-input rounded-md w-full bg-gray-500 placeholder-gray-700 py-3 px-3"
-          >
-            Note (optional)
-          </textarea>
+            placeholder="Note (optional)"
+          />
 
           <div className="flex justify-between font-semibold">
             <p
