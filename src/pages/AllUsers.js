@@ -16,7 +16,7 @@ const AllUsers = () => {
   return (
     <>
       <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
-        <h2 className="text-base text-xl md:text-2xl font-semibold px-14 pt-5 border-b-2 border-gray-600 mb-2">
+        <h2 className="text-xl md:text-2xl font-semibold px-14 pt-5 border-b-2 border-gray-600 mb-2">
           Users
         </h2>
 
