@@ -20,7 +20,7 @@ const Dashboard = () => {
             Assigned Assets
           </DashboardButton>
           <DashboardButton path="/unassigned-assets" className="bg-pink">
-            UnAssigned Assets
+            Unassigned Assets
           </DashboardButton>
           <DashboardButton path="/vendors" className="bg-gray-400">
             Vendors
