@@ -5,7 +5,7 @@ const LocationRow = ({ sn, office, edit, remove }) => {
         <h3 className=" mr-0.5 px-2 w-1/6 ">{sn}</h3>
         <h4 className=" mr-0.5 px-2 w-2/4">{office}</h4>
         <h4 className=" mr-0.5 px-2 w-1/4 text-red-500">{edit}</h4>
-        <h4 className=" px-2 w-1/4 text-red-500">{remove}</h4>
+        <h4 className="px-2 w-1/4 text-red-500  flex justify-center">{remove}</h4>
       </div>
     </>
   );

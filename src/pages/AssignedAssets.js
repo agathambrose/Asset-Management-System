@@ -1,6 +1,6 @@
 import AssetPagination from "../components/Pagination/AssetPagination";
 import AssignedRow from "../components/Rows/AssignedRow";
-import { allAssignedAssets } from "../dummyData/assets";
+import { allAssetList } from "../dummyData/assets";
 
 const AssignedAssets = () => {
   return (
@@ -23,7 +23,7 @@ const AssignedAssets = () => {
             <h4 className="mr-0.5 px-2 w-1/5">Category</h4>
             <h4 className="mr-0.5 px-2 w-1/5">Quantity</h4>
           </div>
-          {allAssignedAssets.map(({ name, category, quantity }, index) => (
+          {allAssetList.map(({ name, category, quantity }, index) => (
             <AssignedRow
               key={index}
               sn={index + 1}

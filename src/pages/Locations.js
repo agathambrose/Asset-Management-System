@@ -1,6 +1,6 @@
 import AssetPagination from "../components/Pagination/AssetPagination";
 import LocationRow from "../components/Rows/LocationRow";
-import { locationList } from "../dummyData/assets";
+import { allAssetList } from "../dummyData/assets";
 
 const Locations = () => {
   return (
@@ -22,7 +22,7 @@ const Locations = () => {
             <h4 className="mr-0.5 px-2 w-1/4">Remove</h4>
           </div>
 
-          {locationList.map(({ office, edit, remove }, index) => (
+          {allAssetList.map(({ office, edit, remove }, index) => (
             <LocationRow key={index} sn={index + 1} office={office} edit={edit} remove={remove} />
           ))}
         </div>
