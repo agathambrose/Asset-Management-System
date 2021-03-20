@@ -39,10 +39,16 @@ const ViewAssets = () => {
           <div className="flex ml-12 mt-4 mb-10">
             <h2 className="font-semibold text-2xl">Basic Information</h2>
             <div className="mt-4 flex items-center">
-              <button className="cursor-pointer rounded-md bg-red-500 text-white ml-4 py-2 px-3">
+              <button
+                className="cursor-pointer rounded-md bg-red-500 text-white ml-4 py-2 px-3"
+                data-testid="required-button"
+              >
                 Add Asset
               </button>
-              <button className="cursor-pointer rounded-md bg-red-500 text-white ml-4 py-2 px-3">
+              <button
+                className="cursor-pointer rounded-md bg-red-500 text-white ml-4 py-2 px-3"
+                data-testid="required-button"
+              >
                 Edit Asset
               </button>
             </div>
@@ -53,10 +59,13 @@ const ViewAssets = () => {
             placeholder="Summary"
             className="border w-10/12 border-gray-400 rounded-md mb-8"
           />
-          <div className="w-10/12 flex rounded-md font-semibold text-xl border border-gray-400  p-4">
-            <div className="space-y-5">
+          <div
+            className="w-10/12 flex rounded-md font-semibold border border-gray-400 p-4"
+            style={{ fontSize: "1.3rem" }}
+          >
+            <div className="space-y-5 w-full">
               <p>Asset Id:</p>
-              <p>Serial #:</p>
+              <p>Serial No:</p>
               <p>Date of Purchase:</p>
               <p>Status:</p>
               <p>Location:</p>
@@ -64,8 +73,9 @@ const ViewAssets = () => {
               <p>Issue Date:</p>
               <p>Due Date:</p>
             </div>
-            <div className="space-y-5 ml-5">
+            <div className="space-y-5 w-full">
               <p>0113767</p>
+              <p>08022233445</p>
               <p>23|11|09</p>
               <p>Assigned</p>
               <p>General Office 1</p>

@@ -9,3 +9,6 @@ export { default as SignIn } from "./SignIn.js";
 export { default as SignUp } from "./SignUp.js";
 export { default as UnassignedAssets } from "./UnassignedAssets.js";
 export { default as Vendors } from "./Vendors.js";
+export { default as Notifications } from "./Notifications";
+export { default as AllUsers } from "./AllUsers";
+export { default as ViewAssets } from "./ViewAssets";

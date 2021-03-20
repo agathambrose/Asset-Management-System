@@ -86,7 +86,7 @@ const App = () => {
             <Notifications />
           </Route>
 
-          {/* /view-asset/:id */}
+          {/* /all-assets/:id */}
           <Route path="/view-assets">
             <ViewAssets />
           </Route>
