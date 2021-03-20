@@ -11,7 +11,13 @@ export const AssetID = ({ className }) => {
       <option value="Warranty Expiry Date" disabled selected hidden>
         Asset Id
       </option>
-      <option value="stuff">Stuff</option>
+      <option value="1 month">1 Month</option>
+      <option value="2 months">2 Months</option>
+      <option value="3 months">3 Months</option>
+      <option value="6 months">6 Months</option>
+      <option value="12 months">12 Months</option>
+      <option value="24 months">24 Months</option>
+      <option value="36 months">36 Months</option>
     </select>
   );
 };

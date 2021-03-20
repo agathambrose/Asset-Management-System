@@ -1,19 +1,13 @@
 import AssetPagination from "../components/Pagination/AssetPagination";
 import AllAssetRow from "../components/Rows/AllAssetRow";
+import Search from "../components/Search";
 import { allAssetList } from "../dummyData/assets";
 
 const AllAssets = () => {
   return (
     <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
-      <h2 className=" text-base md:text-xl font-semibold px-14  border-b-2 mb-2">All Assets</h2>
-
-      <div className="w-full flex justify-end px-14 ">
-        <input
-          type="text"
-          className="border w-3/5 border-gray-600 rounded-l-lg  px-3 py-1 sm:w-1/3"
-        />
-        <button className="bg-red-600 px-3 py-1 rounded-r-lg font-bold">Search</button>
-      </div>
+      <h2 className=" text-base md:text-2xl font-semibold px-14  border-b-2 mb-2">All Assets</h2>
+      <Search />
 
       <div className=" w-full h-auto mt-2 pt-2">
         <div className="w-11/12 m-auto rounded-lg border border-gray-700 ">

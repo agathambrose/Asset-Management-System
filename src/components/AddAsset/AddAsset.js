@@ -44,14 +44,19 @@ export const SerialNumber = ({ type, className, placeholder }) => {
 
 export const Vendor = ({ type, className, placeholder }) => {
   return (
-    <input
-      type={type}
+    <select
+      name="vendor"
+      id="vendor"
+      required
       className={`form-input rounded-md w-full bg-gray-500 placeholder-gray-700 py-3 px-3 ${
         className ? className : ""
       }`}
-      placeholder={placeholder}
-      autoComplete="on"
-    />
+    >
+      <option value="vendor" disabled selected hidden>
+        Vendor
+      </option>
+      <option value="option1"></option>
+    </select>
   );
 };
 
@@ -107,7 +112,13 @@ export const WarrantyExpiryDate = ({ className }) => {
       <option value="Warranty Expiry Date" disabled selected hidden>
         Warranty Expiry Date
       </option>
-      <option value="stuff">Stuff</option>
+      <option value="1 month">1 Month</option>
+      <option value="2 months">2 Months</option>
+      <option value="3 months">3 Months</option>
+      <option value="6 months">6 Months</option>
+      <option value="12 months">12 Months</option>
+      <option value="24 months">24 Months</option>
+      <option value="36 months">36 Months</option>
     </select>
   );
 };
