@@ -44,14 +44,19 @@ export const SerialNumber = ({ type, className, placeholder }) => {
 
 export const Vendor = ({ type, className, placeholder }) => {
   return (
-    <input
-      type={type}
+    <select
+      name="vendor"
+      id="vendor"
+      required
       className={`form-input rounded-md w-full bg-gray-500 placeholder-gray-700 py-3 px-3 ${
         className ? className : ""
       }`}
-      placeholder={placeholder}
-      autoComplete="on"
-    />
+    >
+      <option value="vendor" disabled selected hidden>
+        Vendor
+      </option>
+      <option value="option1"></option>
+    </select>
   );
 };
 
