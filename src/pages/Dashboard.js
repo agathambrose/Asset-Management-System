@@ -8,8 +8,6 @@ const Dashboard = () => {
     <div className="relative bg-white flex-1 flex flex-col">
       {/* First divider */}
       <hr className="absolute top-20 border w-full border-gray-600 " />
-      {/* Second divider */}
-      <hr className="absolute top-540 border w-full border-gray-600 " />
       <div className="flex flex-col pt-6 pl-12">
         <h2 className="font-semibold text-2xl mb-10">Dashboard</h2>
         <div className="flex flex-wrap pl-5">
@@ -36,9 +34,11 @@ const Dashboard = () => {
           </DashboardButton>
         </div>
       </div>
-      <div className="flex flex-col pl-12">
-        <h2 className="font-semibold text-2xl">Visualization</h2>
-        <div className="flex mt-10 justify-between pr-32 pb-10">
+      <div className="relative flex flex-col">
+        <h2 className="font-semibold text-2xl pl-12">Visualization</h2>
+        {/* Second divider */}
+        <hr className="absolute top-14 border w-full border-gray-600 " />
+        <div className="flex mt-10 justify-between pl-12 pr-32 pb-10">
           <div className="w-72">
             <img src={graph1} alt="Graph" />
           </div>
