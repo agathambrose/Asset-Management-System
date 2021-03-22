@@ -15,9 +15,6 @@ module.exports = {
       width: {
         "fit-content": "fit-content",
       },
-      inset: {
-        540: "540px",
-      },
     },
     fontFamily: {
       sans: ["Quicksand", "sans-serif"],
