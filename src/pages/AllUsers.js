@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Pagination from "../components/Pagination/Pagination";
 import Search from "../components/Search";
-import EditUsers from "../components/EditUsersModal";
+import EditUsersModal from "../components/EditUsersModal";
 import { allUsers, allUsersHeader } from "../dummyData/users";
 import { TiDeleteOutline } from "react-icons/ti";
 import { RiUserUnfollowLine } from "react-icons/ri";
@@ -61,7 +61,7 @@ const AllUsers = () => {
                   </tr>
                 ))}
               </tbody>
-              <EditUsers modalRef={modalRef} />
+              <EditUsersModal modalRef={modalRef} />
             </table>
           </div>
         </div>

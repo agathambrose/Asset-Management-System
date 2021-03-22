@@ -1,8 +1,8 @@
 import { ViewAssets } from "../../pages";
 import { render } from "../../test-utils";
 
-describe("ViewAssets", () => {
-  it("renders ViewAssets page correctly", () => {
+describe("View Assets", () => {
+  it("renders View Assets page correctly", () => {
     render(<ViewAssets />);
   });
 });
