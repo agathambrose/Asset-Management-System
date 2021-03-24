@@ -6,10 +6,14 @@ import { RiKeyFill as KeyIcon } from "react-icons/ri";
 import { HiMail as MailIcon } from "react-icons/hi";
 import { MyInput, Button } from "../components";
 import { Checkbox, FormErrorMessage } from "../components/AuthForm";
+import { capitalizeFirstLetter } from "../utils";
+import { useDispatch } from "react-redux";
+import { signup } from "../redux/features/user/userSlice";
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const dispatch = useDispatch();
 
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
@@ -26,6 +30,20 @@ const SignUp = () => {
     checkbox: Yup.bool().oneOf([true], "Please check to proceed").required("Required"),
   });
 
+  const handleSubmit = async (values, actions) => {
+    const newUser = {
+      first_name: capitalizeFirstLetter(values.firstName),
+      middle_name: capitalizeFirstLetter(values.middleName),
+      last_name: capitalizeFirstLetter(values.lastName),
+      phone: values.phoneNumber,
+      email: values.email,
+      password: values.password,
+      password_confirmation: values.confirmPassword,
+    };
+    await dispatch(signup(newUser));
+    actions.setSubmitting(false);
+  };
+
   return (
     <Formik
       initialValues={{
@@ -38,12 +56,7 @@ const SignUp = () => {
         confirmPassword: "",
         checkbox: false,
       }}
-      onSubmit={(values, actions) => {
-        setTimeout(() => {
-          console.log("Submitted");
-          actions.setSubmitting(false);
-        }, 5000);
-      }}
+      onSubmit={handleSubmit}
       validationSchema={validationSchema}
     >
       {({ isSubmitting }) => (
