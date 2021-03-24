@@ -2,11 +2,15 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import history from "./utils/history";
 import loadable from "@loadable/component";
 import { AuthContainer, MainContainer } from "./components";
+import { useSelector } from "react-redux";
 
 const SignIn = loadable(() => import("./pages/SignIn"), {
   fallback: <div>Loading...</div>,
 });
 const SignUp = loadable(() => import("./pages/SignUp"), {
+  fallback: <div>Loading...</div>,
+});
+const VerifyEmail = loadable(() => import("./pages/VerifyEmail"), {
   fallback: <div>Loading...</div>,
 });
 const AllAssets = loadable(() => import("./pages/AllAssets"), {
@@ -41,21 +45,25 @@ const ViewAssets = loadable(() => import("./pages/ViewAssets"), {
 });
 
 const App = () => {
+  const { isAuthenticated, signedUp } = useSelector(state => state.user);
   return (
     <Router history={history}>
       <Switch>
         <Route exact path="/">
-          <Redirect to="/sign-in" />
+          {isAuthenticated ? <Redirect to="/dashboard" /> : <Redirect to="/sign-in" />}
         </Route>
         <Route path="/sign-in">
           <AuthContainer>
-            <SignIn />
+            {isAuthenticated ? <Redirect to="/" /> : <SignIn />}
           </AuthContainer>
         </Route>
         <Route path="/sign-up">
           <AuthContainer>
-            <SignUp />
+            {isAuthenticated ? <Redirect to="/" /> : <SignUp />}
           </AuthContainer>
+        </Route>
+        <Route path="/verify-email">
+          {signedUp ? <VerifyEmail /> : <Redirect to="/" />}
         </Route>
         <MainContainer>
           <Route path="/vendors">

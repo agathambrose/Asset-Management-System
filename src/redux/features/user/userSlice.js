@@ -18,6 +18,7 @@ const initialState = {
     roles: [],
   },
   isAuthenticated: false,
+  signedUp: false,
 };
 
 const userSlice = createSlice({
@@ -27,6 +28,10 @@ const userSlice = createSlice({
     setCurrentUser(state, { payload: currentUser }) {
       state.user = currentUser;
       state.isAuthenticated = true;
+      state.signedUp = false;
+    },
+    setSignedUp(state, action) {
+      state.signedUp = action.payload;
     },
     logoutCurrentUser() {
       return initialState;
@@ -55,6 +60,8 @@ export const signup = newUser => async dispatch => {
   try {
     const res = await axios.post("/auth/register", newUser);
     console.log(res);
+    dispatch(setSignedUp(true));
+    history.push("/verify-email");
   } catch (error) {
     // console.log({ ...error });
     console.log(error.response.data);
@@ -70,5 +77,5 @@ export const logout = () => dispatch => {
   history.push("/sign-in");
 };
 
-export const { setCurrentUser, logoutCurrentUser } = userSlice.actions;
+export const { setCurrentUser, setSignedUp, logoutCurrentUser } = userSlice.actions;
 export default userSlice.reducer;
