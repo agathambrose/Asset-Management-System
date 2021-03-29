@@ -1,8 +1,10 @@
 import userImg from "../../assets/user-img.png";
 import { AiFillCamera } from "react-icons/ai";
 import NavButton from "./NavButton";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { getAssets } from "../../redux/features/assets/assetSlice";
+import Button from "../Button";
+import { logout } from "../../redux/features/user/userSlice";
 
 const SideNav = () => {
   const dispatch = useDispatch();
@@ -27,6 +29,9 @@ const SideNav = () => {
             Assets
           </NavButton>
           <NavButton path="/users">Users</NavButton>
+          <Button color="white" onClick={() => dispatch(logout())}>
+            Logout
+          </Button>
         </div>
       </div>
 
