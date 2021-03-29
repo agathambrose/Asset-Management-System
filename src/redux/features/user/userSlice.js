@@ -61,7 +61,8 @@ export const signup = newUser => async dispatch => {
     const res = await axios.post("/auth/register", newUser);
     console.log(res);
     dispatch(setSignedUp(true));
-    history.push("/verify-email");
+    // history.push("/verify-email");
+    history.push("/sign-in");
   } catch (error) {
     // console.log({ ...error });
     console.log(error.response.data);
