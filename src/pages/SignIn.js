@@ -21,7 +21,7 @@ const SignIn = () => {
   const handleSubmit = async (values, actions) => {
     const user = { email: values.email, password: values.password };
     await dispatch(login(user));
-    actions.setSubmitting(false);
+    // actions.setSubmitting(false);
   };
 
   return (

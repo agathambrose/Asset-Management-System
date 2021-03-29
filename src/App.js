@@ -3,6 +3,7 @@ import history from "./utils/history";
 import loadable from "@loadable/component";
 import { AuthContainer, MainContainer } from "./components";
 import { useSelector } from "react-redux";
+import CheckAuth from "./components/CheckAuth";
 
 const SignIn = loadable(() => import("./pages/SignIn"), {
   fallback: <div>Loading...</div>,
@@ -66,38 +67,40 @@ const App = () => {
           {signedUp ? <VerifyEmail /> : <Redirect to="/" />}
         </Route>
         <MainContainer>
-          <Route path="/vendors">
-            <Vendors />
-          </Route>
-          <Route path="/all-assets">
-            <AllAssets />
-          </Route>
-          <Route path="/assigned-assets">
-            <AssignedAssets />
-          </Route>
-          <Route path="/unassigned-assets">
-            <UnassignedAssets />
-          </Route>
-          <Route path="/locations">
-            <Locations />
-          </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
-          <Route path="/users">
-            <AllUsers />
-          </Route>
-          <Route path="/notifications">
-            <Notifications />
-          </Route>
+          <CheckAuth>
+            <Route path="/vendors">
+              <Vendors />
+            </Route>
+            <Route path="/all-assets">
+              <AllAssets />
+            </Route>
+            <Route path="/assigned-assets">
+              <AssignedAssets />
+            </Route>
+            <Route path="/unassigned-assets">
+              <UnassignedAssets />
+            </Route>
+            <Route path="/locations">
+              <Locations />
+            </Route>
+            <Route path="/profile">
+              <Profile />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/users">
+              <AllUsers />
+            </Route>
+            <Route path="/notifications">
+              <Notifications />
+            </Route>
 
-          {/* /all-assets/:id */}
-          <Route path="/view-assets">
-            <ViewAssets />
-          </Route>
+            {/* /all-assets/:id */}
+            <Route path="/view-assets">
+              <ViewAssets />
+            </Route>
+          </CheckAuth>
         </MainContainer>
       </Switch>
     </Router>

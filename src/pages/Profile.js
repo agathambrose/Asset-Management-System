@@ -5,6 +5,7 @@ import { GrMail } from "react-icons/gr";
 import { FaLinkedin, FaTwitter, FaFacebook } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import EditProfileModal from "../components/EditProfile/EditProfileModal";
+import { useSelector } from "react-redux";
 
 const Profile = () => {
   const [modal, setModal] = useState(null);
@@ -12,22 +13,37 @@ const Profile = () => {
   useEffect(() => {
     setModal(modalRef.current);
   }, []);
+  const {
+    first_name,
+    middle_name,
+    last_name,
+    designation,
+    office,
+    email,
+    phone,
+    picture_url,
+  } = useSelector(state => state.user.user);
+  const fullName = `${first_name ?? ""} ${middle_name ?? ""} ${last_name ?? ""}`;
   return (
     <div className="relative bg-white flex-1 flex">
       <hr className="absolute top-20 border w-full border-gray-600 " />
 
       <div className="w-2/5 flex flex-col items-center pt-6 border-r-4 border-gray-600">
         <h2 className="font-semibold text-2xl mb-5">User Profile</h2>
-        <img src={userImg} alt="User" className="rounded-full w-80 mb-10" />
+        <img
+          src={picture_url ?? userImg}
+          alt="User"
+          className="rounded-full w-80 mb-10"
+        />
         <div className="w-3/4 font-semibold border border-gray-400  p-4 space-y-4">
           <p className="text-xl">User Profile</p>
           <div className="flex items-center ">
             <FiPhoneCall className="text-xl text-gray-700" />
-            <p className="ml-3">08122278609</p>
+            <p className="ml-3">{phone ?? "08122278609"}</p>
           </div>
           <div className="flex items-center ">
             <GrMail className="text-xl text-gray-700" />
-            <p className="ml-3">Chukwuma@hasob.ng</p>
+            <p className="ml-3">{email ?? "Chukwuma@hasob.ng"}</p>
           </div>
           <div className="flex items-center ">
             <FaLinkedin className="text-xl text-linkedin" />
@@ -57,11 +73,11 @@ const Profile = () => {
             <p>Social Network:</p>
           </div>
           <div className="space-y-5 ml-5">
-            <p>Chukwuma Albert Obiazor</p>
-            <p>Chukwuma@hasob.ng</p>
-            <p>08122278609</p>
-            <p>General Office 1</p>
-            <p>Chukwuma Albert Obiazor</p>
+            <p>{fullName ?? "Chukwuma Albert Obiazor"}</p>
+            <p>{email ?? "Chukwuma@hasob.ng"}</p>
+            <p>{phone ?? "08122278609"}</p>
+            <p>{office ?? "General Office 1"}</p>
+            <p>{designation ?? "Snr. Software Engineer"}</p>
             <div className="flex text-2xl items-center justify-around">
               <FaLinkedin className="text-linkedin" />
               <FaTwitter className="text-twitter" />

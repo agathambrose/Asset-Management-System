@@ -21,7 +21,9 @@ const SignUp = () => {
     firstName: Yup.string().min(2, "Must be at least 2 characters").required("Required"),
     middleName: Yup.string().min(2, "Must be at least 2 characters").required("Required"),
     lastName: Yup.string().min(2, "Must be at least 2 characters").required("Required"),
-    phoneNumber: Yup.string().matches(phoneRegExp, "Invalid phone number").required("Required"),
+    phoneNumber: Yup.string()
+      .matches(phoneRegExp, "Invalid phone number")
+      .required("Required"),
     email: Yup.string().email("Invalid email address").required("Required"),
     password: Yup.string().min(6, "Must be at least 6 characters").required("Required"),
     confirmPassword: Yup.string()
@@ -41,7 +43,7 @@ const SignUp = () => {
       password_confirmation: values.confirmPassword,
     };
     await dispatch(signup(newUser));
-    actions.setSubmitting(false);
+    // actions.setSubmitting(false);
   };
 
   return (
@@ -80,7 +82,12 @@ const SignUp = () => {
             />
           </div>
           <MyInput name="lastName" type="text" placeholder="Last Name" pl="5" />
-          <MyInput name="phoneNumber" type="tel" placeholder="Phone Number" leftIcon={PhoneIcon} />
+          <MyInput
+            name="phoneNumber"
+            type="tel"
+            placeholder="Phone Number"
+            leftIcon={PhoneIcon}
+          />
           <MyInput name="email" type="email" placeholder="Email" leftIcon={MailIcon} />
           <MyInput
             name="password"
