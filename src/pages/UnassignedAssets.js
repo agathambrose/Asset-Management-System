@@ -1,19 +1,18 @@
 import AssetPagination from "../components/Pagination/AssetPagination";
 import UnassignedRow from "../components/Rows/UnassignedRow";
 import Search from "../components/Search";
-import { allAssetList } from "../dummyData/assets";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUnassigned } from ".././redux/features/assets/assetSlice";
 
 const UnassignedAssets = () => {
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getUnassigned());
   }, []);
 
-  const unAssignedAssets = useSelector(state => state.unassigned);
-
+  const { unassignedAssets } = useSelector(state => state.asset);
   return (
     <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
       <h2 className=" text-base md:text-2xl font-semibold px-14  border-b-2 mb-2">
@@ -30,16 +29,22 @@ const UnassignedAssets = () => {
             <h4 className=" px-2 w-1/5">Assign</h4>
           </div>
 
-          {/* {allAssetList.map(({ name, category, quantity, assign }, index) => (
-            <UnassignedRow
-              key={index}
-              sn={index + 1}
-              name={name}
-              category={category}
-              quantity={quantity}
-              assign={assign}
-            />
-          ))} */}
+          {unassignedAssets.length < 1 ? (
+            <h2 className="text-center font-bold text-2xl my-5">
+              No Available Unassigned Asset
+            </h2>
+          ) : (
+            unassignedAssets.map(({ name, category, quantity }, index) => (
+              <UnassignedRow
+                key={index}
+                sn={index + 1}
+                name={name}
+                category={category}
+                quantity={quantity}
+                assign="assign"
+              />
+            ))
+          )}
         </div>
         <div className="w-full h-auto mt-2 pt-2">
           <div className="w-11/12 m-auto rounded-lg ">

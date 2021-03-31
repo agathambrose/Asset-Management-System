@@ -41,9 +41,12 @@ type Location = {
 declare module "react-redux" {
   interface DefaultRootState {
     user: User;
-    asset: { asset: Asset[] };
-    assigned: { assignedAssets: Asset[] };
-    unassigned: { unAssignedAssets: Asset[] };
-    location: { location: Location[] };
+    asset: {
+      asset: Asset[];
+      assignedAssets: Asset[];
+      unassignedAssets: Asset[];
+      location: Location[];
+      loading: boolean;
+    };
   }
 }

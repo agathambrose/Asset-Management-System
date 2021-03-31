@@ -14,23 +14,19 @@ const assetSlice = createSlice({
   initialState,
   reducers: {
     setAssets(state, { payload }) {
-      console.log(payload);
       state.asset = payload;
       state.loading = false;
     },
     setAssignedAssets(state, { payload }) {
-      console.log(payload);
       state.assignedAssets = payload;
       state.loading = false;
     },
     setUnassignedAssets(state, { payload }) {
-      console.log(payload);
-      state.assignedAssets = payload;
+      state.unassignedAssets = payload;
       state.loading = false;
     },
     setLocation(state, { payload }) {
-      console.log(payload);
-      state.assignedAssets = payload;
+      state.location = payload;
       state.loading = false;
     },
   },
@@ -40,10 +36,10 @@ export const getAssets = createAsyncThunk("asset/getAssets", async (_, { dispatc
   try {
     const response = await axios.get(`/assets`);
     const data = response.data.data;
-    // dispatch(setAssets(data));
     dispatch(setAssets(data));
   } catch (error) {
-    console.log({ error });
+    console.log(error.response.data);
+    if (!error.response) throw error;
   }
 });
 
@@ -56,7 +52,8 @@ export const getAssigned = createAsyncThunk(
       console.log(data);
       dispatch(setAssignedAssets(data));
     } catch (error) {
-      console.log({ error });
+      console.log(error.response.data);
+      if (!error.response) throw error;
     }
   }
 );
@@ -70,7 +67,8 @@ export const getUnassigned = createAsyncThunk(
       console.log(data);
       dispatch(setUnassignedAssets(data));
     } catch (error) {
-      console.log({ error });
+      console.log(error.response.data);
+      if (!error.response) throw error;
     }
   }
 );
@@ -83,7 +81,8 @@ export const getLocation = createAsyncThunk(
       console.log(data);
       dispatch(setLocation(data));
     } catch (error) {
-      console.log({ error });
+      console.log(error.response.data);
+      if (!error.response) throw error;
     }
   }
 );

@@ -4,17 +4,15 @@ import Search from "../components/Search";
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getLocation } from ".././redux/features/assets/assetSlice";
-import { allAssetList } from "../dummyData/assets";
 
 const Locations = () => {
   const dispatch = useDispatch();
-  const location = useSelector(state => state.location);
 
   useEffect(() => {
     dispatch(getLocation());
-    console.log(location);
   }, []);
-  console.log(location);
+
+  const { location, loading } = useSelector(state => state.asset);
   return (
     <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
       <h2 className=" text-base md:text-2xl font-semibold px-14  border-b-2 mb-2">
@@ -30,9 +28,15 @@ const Locations = () => {
             <h4 className="mr-0.5 px-2 w-1/4">Remove</h4>
           </div>
 
-          {/* {location.map(({ name }, index) => (
-            <LocationRow key={index} sn={index + 1} office={name} edit="edit" remove="edit" />
-          ))} */}
+          {location.map(({ name }, index) => (
+            <LocationRow
+              key={index}
+              sn={index + 1}
+              office={name}
+              edit="edit"
+              remove="edit"
+            />
+          ))}
         </div>
 
         <div className="w-full h-auto mt-2 pt-2">
