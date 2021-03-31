@@ -1,12 +1,23 @@
 import AssetPagination from "../components/Pagination/AssetPagination";
+import { useEffect } from "react";
 import AllAssetRow from "../components/Rows/AllAssetRow";
 import Search from "../components/Search";
 import { allAssetList } from "../dummyData/assets";
+import { useSelector, useDispatch } from "react-redux";
 
+import { getAssets } from ".././redux/features/assets/assetSlice";
 const AllAssets = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getAssets());
+  }, []);
+  const { asset } = useSelector(state => state.asset);
+  console.log(asset);
   return (
     <div className="h-full w-full bg-white p-2 m-auto flex flex-col">
-      <h2 className=" text-base md:text-2xl font-semibold px-14  border-b-2 mb-2">All Assets</h2>
+      <h2 className=" text-base md:text-2xl font-semibold px-14  border-b-2 mb-2">
+        All Assets
+      </h2>
       <Search />
 
       <div className=" w-full h-auto mt-2 pt-2">
@@ -19,15 +30,15 @@ const AllAssets = () => {
             <h4 className="mr-0.5 px-2 w-2/6">Location</h4>
             <h4 className=" px-2 w-12">Edit</h4>
           </div>
-          {allAssetList.map(({ name, category, quantity, location, edit }, index) => (
+          {asset.map(({ id, name, category, quantity, location }, index) => (
             <AllAssetRow
-              key={index}
+              key={id}
               sn={index + 1}
               name={name}
               category={category}
               quantity={quantity}
               location={location}
-              edit={edit}
+              edit="edit"
             />
           ))}
         </div>

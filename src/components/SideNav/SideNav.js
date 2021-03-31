@@ -2,17 +2,11 @@ import userImg from "../../assets/user-img.png";
 import { AiFillCamera } from "react-icons/ai";
 import NavButton from "./NavButton";
 import { useDispatch } from "react-redux";
-import { getAssets } from "../../redux/features/assets/assetSlice";
 import Button from "../Button";
 import { logout } from "../../redux/features/user/userSlice";
 
 const SideNav = () => {
   const dispatch = useDispatch();
-  const handleClick = e => {
-    console.log(e);
-    // dispatch(sendQuestion(data));
-    dispatch(getAssets());
-  };
   return (
     <nav className="bg-white flex flex-col w-1/6 items-center justify-between pb-2">
       <div className="flex justify-between flex-col items-center">
@@ -25,9 +19,7 @@ const SideNav = () => {
         <div className="ml-6 mt-10">
           <NavButton path="/profile">Profile</NavButton>
           <NavButton path="/dashboard">Dashboard</NavButton>
-          <NavButton path="/all-assets" onClick={handleClick}>
-            Assets
-          </NavButton>
+          <NavButton path="/all-assets">Assets</NavButton>
           <NavButton path="/users">Users</NavButton>
           <Button color="white" onClick={() => dispatch(logout())}>
             Logout
