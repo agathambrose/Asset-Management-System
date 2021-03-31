@@ -1,17 +1,27 @@
+// @ts-nocheck
 import React, { useState, useEffect, useRef } from "react";
-import Pagination from "../components/Pagination/Pagination";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllUsers } from "../redux/features/allUsers/allUsersSlice";
+import AllUsersPagination from "../components/Pagination/AllUsersPagination";
 import Search from "../components/Search";
-import EditUsersModal from "../components/EditUsersModal";
-import { allUsers, allUsersHeader } from "../dummyData/users";
+import EditUsersModal from "../components/EditUsers/EditUsersModal";
+import { allUsersHeader } from "../dummyData/users";
 import { TiDeleteOutline } from "react-icons/ti";
 import { RiUserUnfollowLine } from "react-icons/ri";
 
 const AllUsers = () => {
+  const { users } = useSelector(state => state.allUsers);
+  const dispatch = useDispatch();
+
   const [modal, setModal] = useState(null);
   const modalRef = useRef(null);
   useEffect(() => {
     setModal(modalRef.current);
   }, []);
+
+  useEffect(() => {
+    dispatch(getAllUsers());
+  }, [dispatch]);
 
   return (
     <>
@@ -19,9 +29,7 @@ const AllUsers = () => {
         <h2 className="text-xl md:text-2xl font-semibold px-14 pt-5 border-b-2 border-gray-600 mb-2">
           Users
         </h2>
-
         <Search />
-
         <div className="mx-auto my-4 h-full w-11/12">
           <div className="w-full bg-white shadow rounded-lg overflow-auto">
             <table>
@@ -35,21 +43,19 @@ const AllUsers = () => {
                 </tr>
               </thead>
               <tbody>
-                {allUsers.map(({ id, name, location, status, edit, changePassword }) => (
-                  <tr key={id} className="text-lg font-bold p-2">
-                    <td className="w-18">{id}</td>
-                    <td className="w-48">{name}</td>
-                    <td className="w-40">{location}</td>
-                    <td
-                      className={`${status === "Assigned" ? "text-red-600" : "text-gray-200"} w-40`}
-                    >
-                      {status}
+                {users.map(data => (
+                  <tr key={data.id} className="text-lg font-bold p-2">
+                    <td className="w-18">{data.id}</td>
+                    <td className="w-48">
+                      {data.first_name} {data.last_name}
                     </td>
+                    <td className="w-40">General 1</td>
+                    <td className="text-red-600">Assigned</td>
                     <td
                       className="text-red-600 cursor-pointer w-24 pl-2"
                       onClick={() => modal.classList.remove("hidden")}
                     >
-                      {edit}
+                      Edit
                     </td>
                     <td className="text-red-600 cursor-pointer w-20">
                       <RiUserUnfollowLine className="text-xl" />
@@ -57,18 +63,18 @@ const AllUsers = () => {
                     <td className="text-red-600 cursor-pointer w-20">
                       <TiDeleteOutline className="text-xl" />
                     </td>
-                    <td className="w-48 text-gray-200">{changePassword}</td>
+                    <td className="w-48 text-gray-200">Change Password</td>
                   </tr>
                 ))}
               </tbody>
-              <EditUsersModal modalRef={modalRef} />
             </table>
+            <EditUsersModal modalRef={modalRef} />
           </div>
         </div>
 
         <div className="w-full h-auto my-5 pt-2">
           <div className="w-11/12 m-auto rounded-lg ">
-            <Pagination />
+            <AllUsersPagination />
           </div>
         </div>
       </div>

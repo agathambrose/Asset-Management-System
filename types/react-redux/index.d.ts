@@ -48,5 +48,6 @@ declare module "react-redux" {
       location: Location[];
       loading: boolean;
     };
+    allUsers: any;
   }
 }
