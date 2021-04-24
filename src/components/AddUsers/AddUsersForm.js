@@ -8,18 +8,21 @@ import { useDispatch } from "react-redux";
 
 const AddUsersForm = ({ modal }) => {
   const dispatch = useDispatch();
+  const initialValues = {
+    firstName: "",
+    lastName: "",
+    phoneNumber: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    office: "",
+  };
 
   const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
   const formik = useFormik({
-    initialValues: {
-      firstName: "",
-      lastName: "",
-      phoneNumber: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-    },
+    initialValues: initialValues,
+
     validationSchema: Yup.object({
       firstName: Yup.string().required("Required"),
       lastName: Yup.string().required("Required"),
@@ -31,6 +34,7 @@ const AddUsersForm = ({ modal }) => {
       confirmPassword: Yup.string()
         .oneOf([Yup.ref("password"), null], "Passwords must match")
         .required("Required"),
+      office: Yup.string().required("Required"),
     }),
   });
 
@@ -43,9 +47,11 @@ const AddUsersForm = ({ modal }) => {
       email: formik.values.email,
       password: formik.values.password,
       password_confirmation: formik.values.confirmPassword,
+      office: formik.values.office,
     };
     const res = dispatch(addUser(user));
     console.log(res);
+    // return initialValues
   };
 
   return (
@@ -64,7 +70,7 @@ const AddUsersForm = ({ modal }) => {
           placeholder="First Name"
           value={formik.values.firstName}
           onChange={formik.handleChange}
-          // className="w-1/2"
+          className="w-1/2"
         />
         <EditUsersInput
           id="lastName"
@@ -73,10 +79,11 @@ const AddUsersForm = ({ modal }) => {
           placeholder="Last Name"
           value={formik.values.lastName}
           onChange={formik.handleChange}
-          // className="w-1/2 ml-2"
+          className="w-1/2 ml-2"
         />
       </div>
-      <div className="flex justify-between">
+
+      <div className="flex justify-between mb-5">
         <EditUsersInput
           id="email"
           type="email"
@@ -84,7 +91,7 @@ const AddUsersForm = ({ modal }) => {
           value={formik.values.email}
           onChange={formik.handleChange}
           placeholder="Email Address"
-          //className="w-1/2 "
+          className="w-1/2 "
         />
         <EditUsersInput
           id="tel"
@@ -93,29 +100,36 @@ const AddUsersForm = ({ modal }) => {
           value={formik.values.phoneNumber}
           onChange={formik.handleChange}
           placeholder="Phone #"
-          //className="w-1/2 ml-2"
+          className="w-1/2 ml-2"
         />
       </div>
-      <div className="flex justify-between">
-        <EditUsersInput
-          id="password"
-          type="password"
-          name="password"
-          value={formik.values.password}
-          onChange={formik.handleChange}
-          placeholder="Password"
-          //className="w-1/2"
-        />
-        <EditUsersInput
-          id="confirmPassword"
-          type="password"
-          name="confirmPassword"
-          value={formik.values.confirmPassword}
-          onChange={formik.handleChange}
-          placeholder="Confirm Password"
-          //className="w-1/2 ml-2"
-        />
-      </div>
+      <EditUsersInput
+        id="password"
+        type="password"
+        name="password"
+        value={formik.values.password}
+        onChange={formik.handleChange}
+        placeholder="Password"
+        //className="w-1/2"
+      />
+      <EditUsersInput
+        id="confirmPassword"
+        type="password"
+        name="confirmPassword"
+        value={formik.values.confirmPassword}
+        onChange={formik.handleChange}
+        placeholder="Confirm Password"
+        //className="w-1/2 ml-2"
+      />
+      <EditUsersInput
+        id="office"
+        type="text"
+        name="office"
+        value={formik.values.office}
+        onChange={formik.handleChange}
+        placeholder="Office"
+        className="w-1/2 "
+      />
 
       <div className="flex justify-between font-semibold">
         <p

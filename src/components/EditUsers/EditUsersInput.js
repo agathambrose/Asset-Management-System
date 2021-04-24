@@ -1,11 +1,14 @@
 // @ts-nocheck
 //import { ErrorMessage } from 'formik';
 
-const EditUsersInput = ({ ...otherProps }) => {
+const EditUsersInput = props => {
+  const { className, ...otherProps } = props;
   return (
     <div>
       <input
-        className="form-input rounded-md w-full bg-gray-500 placeholder-gray-700 py-3 px-3 ml-2"
+        className={`form-input rounded-md w-full bg-gray-500 placeholder-gray-700 py-3 px-3 ${
+          className ? className : ""
+        }`}
         autoComplete="on"
         {...otherProps}
       />

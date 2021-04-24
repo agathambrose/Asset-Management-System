@@ -17,7 +17,7 @@ export const addUser = createAsyncThunk("allUsers/addUser", async user => {
 export const getAllUsers = createAsyncThunk("allUsers/getAllUsers", async () => {
   try {
     const response = await axios.get("/users");
-    const data = response.data.data;
+    const { data } = response.data;
     console.log(data);
     return data;
   } catch (error) {
@@ -25,48 +25,41 @@ export const getAllUsers = createAsyncThunk("allUsers/getAllUsers", async () => 
   }
 });
 
-//Edit User
-export const editUser = createAsyncThunk("allUsers/editUser", async id => {
-  try {
-    const res = await axios.patch(`/users/${id}`);
-    console.log(res);
-    return res;
-  } catch (error) {
-    console.log(error);
-  }
-});
+// //Edit User
+// export const editUser = createAsyncThunk(
+//   "allUsers/editUser", async (id) => {
+//   try {
+//     const res = await axios.patch(`/users/${id}`);
+//     console.log(res);
+//     return res;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
-// Disable User
-export const disableUser = createAsyncThunk("allUsers/disableUser", async id => {
-  try {
-    const res = await axios.patch(`/users/${id}/disable`);
-    console.log(res);
-    return res;
-  } catch (error) {
-    console.log(error);
-  }
-});
-
-// Delete User
-export const deleteUser = createAsyncThunk("allUsers/deleteUser", async id => {
-  try {
-    const res = await axios.delete(`/users/${id}`);
-    return res;
-  } catch (error) {
-    console.log(error);
-  }
-});
+// // Disable User
+// export const disableUser = createAsyncThunk(
+//   "allUsers/disableUser", async (id) => {
+//   try {
+//     const res = await axios.patch(`/users/${id}/disable`);
+//     console.log(res);
+//     return res;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
 const allUsersSlice = createSlice({
   name: "allUsers",
   initialState: {
     users: [],
-    //addedUser: false
   },
   reducers: {
-    //Delete
-    //Disable
-    //edit
+    editUser: () => {},
+    deleteUser: (state, { payload }) => {
+      return (state = state.filter(({ id }) => id !== payload));
+    },
+    disableUser: () => {},
   },
   extraReducers: {
     [getAllUsers.fulfilled]: (state, { payload: users }) => {
@@ -75,4 +68,28 @@ const allUsersSlice = createSlice({
   },
 });
 
+export const editUserData = id => async dispatch => {
+  try {
+    axios.patch(`/users/${id}`);
+    dispatch(editUserData());
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteUserData = id => async dispatch => {
+  try {
+    await axios.delete(`/users/${id}`);
+    dispatch(deleteUser(id));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const disableUserData = () => async dispatch => {
+  try {
+  } catch (error) {}
+};
+
+export const { editUser, deleteUser, disableUser } = allUsersSlice.actions;
 export default allUsersSlice.reducer;
